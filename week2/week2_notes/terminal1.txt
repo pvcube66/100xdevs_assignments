@@ -1,0 +1,46 @@
+1. pwd : print the current working directory
+2. cd: change directory 
+// we can use tab to automate stuff
+eg: cd folder_name
+for going thru multiple folders
+eg: cd folder_name1/folder_name2
+
+going back to last folder, that is one folder before current folder
+ cd ..
+
+going back to multiple lfolders
+cd ../..
+
+3. ls: list all the files in current file
+
+4.mkdir: make directory
+eg: mkdir directory_name
+
+5. touch: lets you create a empty file
+eg: touch temp.txt
+
+6.cat: to see the content of a file use cat
+eg: cat temp.txt
+
+7.vi: its a ide command , vim editor.
+
+8.mv: move files from one folder to another
+eg: mv filename folder_name_where_u_want_to_move
+eg: mv folder_to_be_moved folder_destination
+
+9.cp: copy content of file from one file to another file
+eg: cp filename folder_name
+
+10.node:
+to run a js file:
+node filename.js
+similar to a py interpreter, playground
+to exit: .exit
+or control+c and control+c
+
+11.npm: node package manager
+lets you install libraries
+eg: npm install library name
+
+12.clear: clear the content of the terminal
+
