@@ -1,0 +1,129 @@
+Title: Node.js runtime and http 
+
+
+what is ecmascript?
+
+its a scripting lang on which js is based.its a specification .
+tells about the standards of the js.
+when your building a js compiler it should follow all these standards and rules.
+these mfs keep updating the features every year.
+
+what is javascript?
+
+its scripting language which basically is a implementation of the ecmascript, it also has features which are not 
+in the ecmascript. eg: dom, setTimeout
+chrome uses v8 engine (this compiles the js code to 0's and 1's):
+its developed by google chromium projejct primarily written in c/c++
+firefox uses spidermonkey
+
+what is node.js?
+node.js is a runtime environment for js[ not a framework not a language].
+
+
+some mf pulled out the v8 engine chrome so that  it can execute the js code outside the browser
+and we can write the backend applications + they also added some features which will help us to build backend 
+eg: reading from the file. etc
+
+what is bun?
+
+it a competitor to node.js 
+whatever node does bun does it better.
+bun is written zig simlar to rust a low level language 
+it outperformed node.js in many aspects.
+node.js is slower so they introduced bun 
+its also a run time environment of js
+
+what can we do with node.js:
+1.create cli[command line interface]
+2.create video player
+3.games
+4.create http server(mostly used for this stuff)
+
+what exactly is an http server?
+hyper text transfer protocol
+protocol:rules
+1.a protocol thata is deefined for machines to communicaate
+2.specifically for websites . it is the most common way for website frontend to talk to backend
+
+frontend:what you see 
+eg: send money to someone
+backend:what happens in the server
+eg:receives money,update money, send acknowledgement to frontend
+
+
+frontend [google page ]-> search ------> request sent to google server[backcend server]
+
+what is a http server?
+it follows http protocol
+
+something that takes input from the user on internet , does some computation and return the result/data.
+
+http protocol:
+things the client need to worry about:
+1.protocol http/https
+2.address(ip/port/url)
+3.route
+4.headers,body,query params
+5.method
+
+things server needs to worry about:
+1. response headers
+2. response body 
+3. status codes
+
+
+// decomposition:
+
+https://chat.openai.com/backend-api/convo
+
+here:
+protocol:https
+url: chat.openai.com
+route:backend-api/convo
+header-cookies
+body: stuff you write
+method: get/post etc
+
+what happens when you fire a request on a website?
+
+1. browser will parse the url ie. finding where we are sending the request 
+2. does a dns lookup(convert google.com to ip address) 
+domain name service resolution
+3. establish a connection to the ip.
+
+what are the common method types:
+1.get- used to get something from the server
+2.post- adding a new convo
+3.put- updating stuff ig
+4.delete - deleting a convo
+
+example with respect to hospital system:
+get: going to fora check up or consultation
+post: getting a new kidney, creating something new which doesnt exist. create a new rescourse
+put: replacing a kidney ,updating the data
+delete: removing the kidney
+
+what are the common status codes:
+1. 200 everything is ok
+2. 404 page/route not found
+3. 403:authentication issues
+4. 500 internal server error
+
+hospital eg:
+200: everything ok
+500: powergone in between hospital
+411:inputs aree wrong, wrong pereson communicaate
+404: doctor is not in hospital
+403: your banned frrom the hospital, authentication issues
+
+
+
+we dont actually need any status code etc , but its a good practice to have.
+
+express
+an express is a external library which lets us create http server
+
+//we will fuckin create a http server in cpp as an assignment
+
+
+
