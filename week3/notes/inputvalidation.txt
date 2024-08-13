@@ -1,0 +1,12 @@
+its the job of the programmer to perform user validation such that our 
+server dont crash
+if a user sends invalid data stuff / even if our server crashes/causes exception
+ we dont want users to read our backend logic 
+ to avoid this we use global catches
+
+
+ugly way to do is :
+use multiple if else blocks but  its hard to scale 
+
+good way is to use : zod library
+everythingg is already immplementtd we just have to use it,, we are parsiing the  input frorom the user

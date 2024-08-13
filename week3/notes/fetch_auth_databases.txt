@@ -1,0 +1,5 @@
+fetch: its a part of the js runtime
+fetch is a function/api which lets us get some data from the server
+basically means how can we hit other peoples server and get the data
+fetch is provided by the browser
+ 

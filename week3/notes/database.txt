@@ -1,0 +1,14 @@
+user hits the backend
+backend hits the database
+
+user cannot access database directly
+
+there are multiple types of databases:
+graph,vector,sql, no sql
+
+mongoDb:
+lets you create database
+lets you create tables(collections)
+in each table lets you dump json data
+schemaless
+scales well

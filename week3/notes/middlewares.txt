@@ -1,0 +1,86 @@
+doctor example : refer 3.1 pdf
+checks in between
+the use case of middlewares is prechecking,input validation
+
+precheckes every website does: auth, input validation(are you hitting the correct route or not)
+we can pass input thru headers, body and query params
+
+we can do the checking in the route itself where the main logic is present but it is a ugly way.
+refer ugly.js
+
+
+suppose we need to do some <same checking> in different routes will make our code repeat
+which violates DRY PRINCIPLE
+1.slightly better way is to create wrapper function
+2. Best way is to use the middlewares
+
+By using middlewares we make sure there is "seperation of concern" by which the route can only focus on doing 
+only its task
+
+middleware is just like a function:
+
+function userValidation(req,res,next){
+    //take the stuff required for doing checking
+
+    const username=req.headers.username;
+    const pass=req.headers.password;
+
+    //write your logic here 
+    if(username!='vishnu' && pass!="hi"){
+        res.status(404).send('invalid user details')
+        return;
+    }
+    
+        //when we feel everything is fine we call next
+        next();
+   
+};
+
+a route can handle multiple callbacks where we can pass the middlewares:
+eg:
+app.get('/health-check',userValidation,kidneyValidation,(req,res)=>{
+    res.json({
+        msg:'perfectly fine health ser'
+    })
+})
+
+we can only move to the kidneyValidation when we have called next() in userValidation
+
+
+some famous middlewares: ratelimiter, calculateRequests.
+
+wtf is app.use()
+remember we used the app.use(express.json()) to handle the body values
+express.json() itself calls a function thats why we called it in the use() the function 
+extracts the body 
+we are needing this is because we dont know what type data the body is having
+
+
+if we know a middleware is going to be called in every route then we use app.use()
+eg:
+
+function userValidation(req,res,next){
+    const username=req.headers.username;
+    const pass=req.headers.password;
+    if(username!='vishnu' && pass!="hi"){
+        res.status(404).send('invalid user details')
+        return;
+    }
+    else{
+        res.send(next());
+    }
+};
+
+app.use(userValidation);
+
+when we do this: this middleware is called on all the routes
+
+//ass1: count the no of requests :: countRequest.js
+//ass2: find average time your server is taking to handle requests:: avg.js almost done
+but we need to get value from one function to another function and compute difference
+:: we understand middleware now ? dnt we?
+hell yeah brother
+
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+          list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="names">
+
+    </div>
+    <img  id="hi" src="" alt="">
+
+    <script>
+       async  function getAnimalData(){
+            const data= await fetch('https://fakerapi.it/api/v1/persons');
+            // console.log(data);
+            const res=await data.json()
+            console.log(res)
+            const body=document.querySelector('.names');
+            
+            for(let i=0;i<res.data.length;i++){
+                temp=document.createElement('li');
+                temp.textContent=res.data[i].firstname
+                body.appendChild(temp);
+                
+            }
+
+        }
+    </script>
+    <button onclick="getAnimalData()">Get animal data</button>
+
+</body>
+</html>
