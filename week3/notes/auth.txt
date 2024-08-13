@@ -1,0 +1,73 @@
+anyone can hit our backend routes,how to prevent it?
+using auth:
+dumb way: username password in all requests as headers
+
+better way:
+eg: username and password validation
+1. user gives the details
+2. we check whetehr the credentials are correct, if yes we give a token some random long string
+3. we store the token somewhere(browser-> localStorage)
+4.for every route/request we take the token from the user
+5. were using tokens coz there are a lots 0f security reasons
+
+cryptography mf:
+1.hashing
+2.encryption
+3.json web tokens
+4.local localStorage
+
+
+1.hashing:
+converting a simple string to complex gibbrish
+
+our username/password are not directly stored as they are in the database
+they are 'hased' before putting on the database
+a single input(password/usrname) should always give the same hashed stuff
+
+reasons:
+privacy
+security
+
+eg:
+vishnu to 34584kjkdjfdlskjf34093209
+given the output no one can guess the input
+
+2.encryption:
+
+our data will not be stored as it is.
+its stored in encrypted formated and again when we want to see it , it gets decrypted
+difference between hashing and encryption is:
+encryption is 2 ways
+hashing is one way
+
+it requires a key/password
+
+
+3.json web tokens:
+
+1.json: only works for the json data
+2.web: used in the web 
+3.token: a long string token is generated
+
+its like a digital signature
+it can be only verified by using the password
+
+it has 3 parts
+compress some big data
+
+
+its just a complex object to a long long string
+anyone who has the string can view the data
+
+4.localStorage:
+when the user sends their username and password , we check in our databaseif their credentials are correct
+if yes, our backend sends them a jwt which is stored on the localStorage [localStorage.setToken] in the application tab 
+this will stay in the browser till user log outs
+
+ante brother like nuvvu chala messages send cheyochu kada chatgpt ki , daniki ela telustundi adi nuvve ani?
+adi aa localStorage lo unde jwt ni use cheskuntundi
+
+
+
+
+
